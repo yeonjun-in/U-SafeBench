@@ -39,7 +39,7 @@ Alternatively, you can download the test questions and few-shot examples through
 
 Note that the `options` field in the data includes at most four items, corresponding to the options A, B, C, D in order. For the `answer` field in the dev data, the mapping rule is: 0->A, 1->B, 2->C, 3->D.
 
-## How to Evaluate on SafetyBench
+## How to Evaluate
 In our paper, we conduct experiments in both zero-shot and five-shot settings. And we extract the predicted answers from models' responses. An example of evaluation code could be found at [code](./code/evaluate_baichuan.py). We don’t include CoT-based evaluation because SafetyBench is less reasoning-intensive than benchmarks testing the model’s
 general capabilities such as MMLU. But feel free to submit your results based on CoT. The default prompt for zero-shot and five-shot evaluation is shown below:
 ![figure](./figs/eva_prompts.png)
@@ -47,23 +47,8 @@ general capabilities such as MMLU. But feel free to submit your results based on
 To enable more accurate extraction of the predicted answers, we made minor changes to the prompts for some models, which is shown below:
 ![figure](./figs/prompt_change.png)
 
-## How to Submit
-You need to first prepare a UTF-8 encoded JSON file with the following format, please refer to [submission_example.json](./submission_example.json) for details.
 
-```
-## key is the "id" field of the test questions
-## value is the predicted answer: 0->A, 1->B, 2->C, 3->D
-{
-    "0": 0,
-    "1": 1,
-    "2": 3,
-    "3": 2 
-}
-```
-
-Then you can submit the JSON file to our [website](https://llmbench.ai/safety). 
-
-## Citation
+<!-- ## Citation
 ```
 @article{zhang2023safetybench,
       title={SafetyBench: Evaluating the Safety of Large Language Models with Multiple Choice Questions}, 
@@ -71,4 +56,4 @@ Then you can submit the JSON file to our [website](https://llmbench.ai/safety).
       journal={arXiv preprint arXiv:2309.07045},
       year={2023}
 }
-```
+``` -->
