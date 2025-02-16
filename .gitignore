@@ -1,0 +1,4 @@
+eval_full/
+pred_full/
+__pycache__/
+.pyc
