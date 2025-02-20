@@ -8,7 +8,6 @@ U-SafeBench is a comprehensive benchmark for evaluating the user-specific safety
   <img src="./figs/motivation.png" width="450">
 </p>
 
-![overview](./figs/eval.png)
 
 
 ## Table of Contents <!-- omit from toc -->
@@ -60,6 +59,8 @@ We put our data on the [Hugging Face website](https://huggingface.co/datasets/th
 ```
 
 ## How to evaluate
+
+![overview](./figs/eval.png)
 
 ### API preparation
 In our paper, we conduct experiments on various LLMs with base prompt (`run_**_base.py`), CoT prompt (`run_**_cot.py`), and jailbreak attacked prompt (`run_**_prefix_inject.py` and `run_**_refusal_suppress.py`). To run each LLM, you need to prepare [GPT API](https://openai.com/index/openai-api/), [Claude API](https://console.anthropic.com/), and [Together.AI API](https://www.together.ai/). 
