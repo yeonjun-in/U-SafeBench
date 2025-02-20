@@ -110,12 +110,12 @@ Run all cells in eval.ipynb file to see all results.
 
  
 
-<!-- ## Citation
+## Citation
 ```
-@article{zhang2023safetybench,
-      title={SafetyBench: Evaluating the Safety of Large Language Models with Multiple Choice Questions}, 
-      author={Zhexin Zhang and Leqi Lei and Lindong Wu and Rui Sun and Yongkang Huang and Chong Long and Xiao Liu and Xuanyu Lei and Jie Tang and Minlie Huang},
+@article{in2025is,
+      title={Is Safety Standard Same for Everyone? User-Specific Safety Evaluation of Large Language Models}, 
+      author={Yeonjun In and Wonjoon Kim and Kanghoon Yoon and Sungchul Kim and Md Mehrab Tanjim and Kibum Kim and Chanyoung Park},
       journal={arXiv preprint arXiv:2309.07045},
-      year={2023}
+      year={2025}
 }
-``` -->
+```
