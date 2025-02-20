@@ -36,7 +36,7 @@ conda env create -f u-safe-bench.yml
 
 ## Data
 ### Download
-We put our data on the [Hugging Face website](https://huggingface.co/datasets/thu-coai/SafetyBench). Alternatively, you can directly use json files placed in `./data/` folder.
+We put our data on the [Hugging Face website](https://huggingface.co/datasets/Yeonjun/U-SafeBench). Alternatively, you can directly use json files placed in `./data/` folder.
 
 ### Description
 `safety_eval_collection.json` contains unsafe instructions with their labeled user profiles. Task domains and risk scenarios associated with instructions are also provided. 
