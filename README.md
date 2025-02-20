@@ -110,12 +110,12 @@ Run all cells in eval.ipynb file to see all results.
 
  
 
-## Citation
+<!-- ## Citation
 ```
 @article{in2025is,
       title={Is Safety Standard Same for Everyone? User-Specific Safety Evaluation of Large Language Models}, 
-      author={Yeonjun In and Wonjoon Kim and Kanghoon Yoon and Sungchul Kim and Md Mehrab Tanjim and Kibum Kim and Chanyoung Park},
+      author={Yeonjun In and Wonjoong Kim and Kanghoon Yoon and Sungchul Kim and Md Mehrab Tanjim and Kibum Kim and Chanyoung Park},
       journal={arXiv preprint arXiv:2309.07045},
       year={2025}
 }
-```
+``` -->
