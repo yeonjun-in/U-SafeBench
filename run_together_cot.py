@@ -16,14 +16,10 @@ client = Together()
 
 full_prompt_format = '''<|begin_of_text|><|start_header_id|>system<|end_header_id|>{SYSTEM_PROMPT}<|eot_id|><|start_header_id|>user<|end_header_id|>{USER_PROMPT}<|eot_id|><|start_header_id|>assistant<|end_header_id|>'''
 
-@backoff.on_exception(
-    backoff.expo,  # 지수 백오프 방식
-    (openai.error.RateLimitError, openai.error.APIError),  # 처리할 예외
-    max_tries=5  # 최대 재시도 횟수
-)
+
 def gen_answer(s, p):
     response = client.chat.completions.create(
-        model=args.llm,  # LLaMA 3 model
+        model=args.llm,  
         messages=[{"role": "user", "content": full_prompt_format.replace('{SYSTEM_PROMPT}', s).replace('{USER_PROMPT}', p)}],
         max_tokens=100, temperature=0,
     )
