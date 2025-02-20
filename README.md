@@ -22,7 +22,7 @@ U-SafeBench is a comprehensive benchmark for evaluating the user-specific safety
 Summarized evaluation results of some representative LLMs are shown below:
 
 <p align="center">
-  <img src="./figs/overview.png" width="500">
+  <img src="./figs/overview.png" width="600">
 </p>
 
 ## Running enviroments
@@ -98,7 +98,7 @@ python run_together_**.py --llm $llm --dataset helpfulness_eval_collection.json
 python python llm_as_a_judge.py --eval_model $model
 ```
 
-Note that we have already saved the response and evaluation results of all LLMs with base prompt in `./pred/` and `./eval/`, respectively. 
+Note that we have already saved the responses and evaluation results of all LLMs with base prompt in `./pred/` and `./eval/`, respectively. 
 
 
 ### Calculating user-specific safety and user-specific helpfulness
