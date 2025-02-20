@@ -1,7 +1,7 @@
 # Is Safety Standard Same for Everyone? User-Specific Safety Evaluation of Large Language Models
 
 <p align="center">
-   🤗 <a href="https://huggingface.co/datasets/thu-coai/SafetyBench" target="_blank">Hugging Face</a> • ⏬ <a href="#data" target="_blank">Data</a> •   📃 <a href="https://arxiv.org/abs/2309.07045" target="_blank">Paper</a>
+   🤗 <a href="https://huggingface.co/datasets/Yeonjun/U-SafeBench" target="_blank">Hugging Face</a> • ⏬ <a href="#data" target="_blank">Data</a> •   📃 <a href="https://arxiv.org/abs/2309.07045" target="_blank">Paper</a>
 </p>
 
 U-SafeBench is a comprehensive benchmark for evaluating the user-specific safety of LLMs, which comprises 1,936 diverse instructions and 157 user profiles spanning various safety risk scenarios. 
