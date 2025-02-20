@@ -30,9 +30,7 @@ Summarized evaluation results of some representative LLMs are shown below:
 ### Download
 We put our data on the [Hugging Face website](https://huggingface.co/datasets/thu-coai/SafetyBench).
 
-You can download the test questions and few-shot examples through `wget` directly. Just run the script [`download_data.sh`](./code/download_data.sh)
-
-Alternatively, you can download the test questions and few-shot examples through the `datasets` library. Just run the code [`download_data.py`](./code/download_data.py)
+Alternatively, you can directly use json files placed in `./data/` folder.
 
 ### Description
 `test_zh`, `test_en` and `test_zh_subset` contain test questions for Chinese, English and Chinese subset respectively. `dev_zh` and `dev_en` contain 5 examples for each safety category, which can be used as few-shot demonstrations. 
