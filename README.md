@@ -27,7 +27,7 @@ Summarized evaluation results of some representative LLMs are shown below:
 
 ## Running enviroments
 ```
-conda env create -f listt5_conda_env.yml
+conda env create -f u-safe-bench.yml
 ```
 
 ## Data
@@ -66,15 +66,43 @@ We put our data on the [Hugging Face website](https://huggingface.co/datasets/th
 In our paper, we conduct experiments on various LLMs with base prompt (`run_**_base.py`), CoT prompt (`run_**_cot.py`), and jailbreak attacked prompt (`run_**_prefix_inject.py` and `run_**_refusal_suppress.py`). To run each LLM, you need to prepare [GPT API](https://openai.com/index/openai-api/), [Claude API](https://console.anthropic.com/), and [Together.AI API](https://www.together.ai/). 
 
 
-### Response collection
-Although we have already saved our prediction results in `./pred/`, in case you want to have your own results, we have prepared `run_base.sh` file to run all LLMs with base prompt and save responses in `./pred/` folder. 
+### Safety evaluation
 
-### LLM-as-a-Judge for evaluating refusal ability
-Once obtaining responses from all LLMs, run `run_llm_judge.sh` file to execute our LLM-as-a-Judge function for evaluating the refusal intent of responses. Likewise, we have saved our evaluation results from LLM-as-a-Judge in `./eval/` folder. 
+1. Collect response from all LLMs:
+
+```
+python run_claude_**.py --llm $llm --dataset safety_eval_collection.json
+python run_gpt_**.py --llm $llm --dataset safety_eval_collection.json
+python run_together_**.py --llm $llm --dataset safety_eval_collection.json
+```
+
+2. Evaluating refusal intent by LLM-as-a-Judge
+
+```
+python python llm_as_a_judge.py --eval_model $model
+```
+
+### Helpfulness evaluation
+
+1. Collect response from all LLMs:
+
+```
+python run_claude_**.py --llm $llm --dataset helpfulness_eval_collection.json
+python run_gpt_**.py --llm $llm --dataset helpfulness_eval_collection.json
+python run_together_**.py --llm $llm --dataset helpfulness_eval_collection.json
+```
+
+2. Evaluating refusal intent by LLM-as-a-Judge
+
+```
+python python llm_as_a_judge.py --eval_model $model
+```
+
+Note that we have already saved the response and evaluation results of all LLMs with base prompt in `./pred/` and `./eval/`, respectively. 
 
 
 ### Calculating user-specific safety and user-specific helpfulness
-After you finish both reponse collection and refusal evaluation, run all cells in eval.ipynb file to see all results.
+Run all cells in eval.ipynb file to see all results.
 
  
 
