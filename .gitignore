@@ -1,6 +1,0 @@
-data_old/
-eval_full/
-pred_full/
-__pycache__/
-.pyc
-.gitignore
