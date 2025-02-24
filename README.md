@@ -1,7 +1,7 @@
 # Is Safety Standard Same for Everyone? User-Specific Safety Evaluation of Large Language Models
 
 <p align="center">
-   🤗 <a href="https://huggingface.co/datasets/Yeonjun/U-SafeBench" target="_blank">Hugging Face</a> • ⏬ <a href="#data" target="_blank">Data</a> •   📃 <a href="" target="_blank">Paper</a>
+   🤗 <a href="https://huggingface.co/datasets/Yeonjun/U-SafeBench" target="_blank">Hugging Face</a> • ⏬ <a href="#data" target="_blank">Data</a> •   📃 <a href="https://arxiv.org/abs/2502.15086 " target="_blank">Paper</a>
 </p>
 
 U-SafeBench is a comprehensive benchmark for evaluating the user-specific safety of LLMs, which comprises 1,936 diverse instructions and 157 user profiles spanning various safety risk scenarios. 
@@ -110,12 +110,15 @@ Run all cells in eval.ipynb file to see all results.
 
  
 
-<!-- ## Citation
+## Citation
 ```
-@article{in2025is,
+@misc{in2025safetystandardeveryoneuserspecific,
       title={Is Safety Standard Same for Everyone? User-Specific Safety Evaluation of Large Language Models}, 
-      author={Yeonjun In and Wonjoong Kim and Kanghoon Yoon and Sungchul Kim and Md Mehrab Tanjim and Kibum Kim and Chanyoung Park},
-      journal={arXiv preprint arXiv:2309.07045},
-      year={2025}
+      author={Yeonjun In and Wonjoong Kim and Kanghoon Yoon and Sungchul Kim and Mehrab Tanjim and Kibum Kim and Chanyoung Park},
+      year={2025},
+      eprint={2502.15086},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2502.15086}, 
 }
-``` -->
+```
