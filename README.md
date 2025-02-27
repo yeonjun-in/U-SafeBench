@@ -112,13 +112,10 @@ Run all cells in eval.ipynb file to see all results.
 
 ## Citation
 ```
-@misc{in2025safetystandardeveryoneuserspecific,
-      title={Is Safety Standard Same for Everyone? User-Specific Safety Evaluation of Large Language Models}, 
-      author={Yeonjun In and Wonjoong Kim and Kanghoon Yoon and Sungchul Kim and Mehrab Tanjim and Kibum Kim and Chanyoung Park},
-      year={2025},
-      eprint={2502.15086},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2502.15086}, 
+@article{in2025safety,
+  title={Is Safety Standard Same for Everyone? User-Specific Safety Evaluation of Large Language Models},
+  author={In, Yeonjun and Kim, Wonjoong and Yoon, Kanghoon and Kim, Sungchul and Tanjim, Mehrab and Kim, Kibum and Park, Chanyoung},
+  journal={arXiv preprint arXiv:2502.15086},
+  year={2025}
 }
 ```
