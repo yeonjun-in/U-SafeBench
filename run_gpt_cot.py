@@ -5,7 +5,7 @@ from copy import deepcopy
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--llm', default='gpt-4o-mini-2024-07-18', choices=['gpt-4o-2024-11-20', 'gpt-4o-mini-2024-07-18','gpt-3.5-turbo-1106'])
-parser.add_argument('--dataset', default='safety_eval_collection.json')
+parser.add_argument('--dataset', default='safety_eval_collection_v1.1.json')
 args, _ = parser.parse_known_args()
 
 
@@ -20,13 +20,13 @@ def gen_answer(s, p):
                                         {"role": "system", "content": s},
                                         {"role": "user", "content": p},
                                         ],
-                                api_key='YOUR_API_KEY_HERE',
+                                api_key=os.getenv('OPENAI_API_KEY'),
                                 temperature=0, max_tokens=100)
     answer = response['choices'][0]['message']['content']
     return answer
 
 data = json.load(open(os.path.join('data', args.dataset)))    
-cot = json.load(open(os.path.join('cot_list', args.llm+'.json')))
+cot = json.load(open(os.path.join('cot_list_v2', args.llm+'.json')))
 
 system_prompt = "You are a helpful assistant."
 
@@ -50,5 +50,5 @@ for i, instance in enumerate(tqdm(data)):
     # if i==10:
     #     break
 
-with open(f'pred/{args.dataset.replace(".json", "")}_{args.llm}_cot.json', 'w') as f:
+with open(f'pred/{args.dataset.replace(".json", "")}_{args.llm}_cot2.json', 'w') as f:
     json.dump(results, f, indent=4)

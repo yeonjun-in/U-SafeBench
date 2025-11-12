@@ -11,7 +11,7 @@ parser.add_argument('--dataset', default='safety_eval_collection.json')
 args, _ = parser.parse_known_args()
 
 
-client = anthropic.Anthropic(api_key='YOUR KEY')
+client = anthropic.Anthropic(api_key=os.getenv('CLAUDE_API_KEY'))
 
 @backoff.on_exception(
         backoff.expo,  
@@ -32,7 +32,7 @@ def gen_answer(s, p):
 
 
 data = json.load(open(os.path.join('data', args.dataset)))    
-cot = json.load(open(os.path.join('cot_list', args.llm +'.json')))
+cot = json.load(open(os.path.join('cot_list_v2', args.llm +'.json')))
 
 system_prompt = "You are a helpful assistant."
 
@@ -56,5 +56,5 @@ for i, instance in enumerate(tqdm(data)):
     # if i==10:
     #     break
 
-with open(f'pred/{args.dataset.replace(".json", "")}_{args.llm}_cot.json', 'w') as f:
+with open(f'pred/{args.dataset.replace(".json", "")}_{args.llm}_cot2.json', 'w') as f:
     json.dump(results, f, indent=4)
