@@ -11,7 +11,7 @@ parser.add_argument('--dataset', default='safety_eval_collection.json')
 args, _ = parser.parse_known_args()
 
 
-client = anthropic.Anthropic(api_key='YOUR KEY')
+client = anthropic.Anthropic(api_key=os.getenv('CLAUDE_API_KEY'))
 
 @backoff.on_exception(
         backoff.expo,  

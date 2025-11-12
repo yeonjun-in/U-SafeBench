@@ -20,7 +20,7 @@ def gen_answer(s, p):
                                         {"role": "system", "content": s},
                                         {"role": "user", "content": p},
                                         ],
-                                api_key='YOUR_API_KEY_HERE',
+                                api_key=os.getenv('OPENAI_API_KEY'),
                                 temperature=0, max_tokens=100)
     answer = response['choices'][0]['message']['content']
     return answer

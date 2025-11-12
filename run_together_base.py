@@ -3,7 +3,7 @@ from tqdm import tqdm
 from prompt import *
 from copy import deepcopy
 from together import Together
-os.environ['TOGETHER_API_KEY'] = 'YOUR_API_KEY_HERE'  # Replace 'YOUR_API_KEY_HERE' with your actual API key
+# os.environ['TOGETHER_API_KEY'] = 'YOUR_API_KEY_HERE'  # Replace 'YOUR_API_KEY_HERE' with your actual API key
 parser = argparse.ArgumentParser()
 parser.add_argument('--llm', default='meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo')
 parser.add_argument('--dataset', default='safety_eval_collection.json')
@@ -13,7 +13,15 @@ client = Together()
 
 
 
-full_prompt_format = '''<|begin_of_text|><|start_header_id|>system<|end_header_id|>{SYSTEM_PROMPT}<|eot_id|><|start_header_id|>user<|end_header_id|>{USER_PROMPT}<|eot_id|><|start_header_id|>assistant<|end_header_id|>'''
+
+if 'Llama' in args.llm:
+    full_prompt_format = '''<|begin_of_text|><|start_header_id|>system<|end_header_id|>{SYSTEM_PROMPT}<|eot_id|><|start_header_id|>user<|end_header_id|>{USER_PROMPT}<|eot_id|><|start_header_id|>assistant<|end_header_id|>'''
+elif 'gemma' in args.llm:
+    full_prompt_format = '''<bos><start_of_turn>user\{USER_PROMPT}<end_of_turn>\n<start_of_turn>model\n'''
+elif 'mistral' in args.llm:
+    full_prompt_format = '''<s> [INST] {SYSTEM_PROMPT}\n\n{USER_PROMPT} [/INST]'''
+elif 'Qwen' in args.llm:
+    full_prompt_format = '''<|im_start|>system\n{SYSTEM_PROMPT}<|im_end|>\n<|im_start|>user\n{USER_PROMPT}<|im_end|>\n<|im_start|>assistant\n'''
 
 @backoff.on_exception(
     backoff.expo, 
