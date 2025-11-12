@@ -7,7 +7,7 @@ os.environ['TOGETHER_API_KEY'] = 'YOUR_API_KEY_HERE'  # Replace 'YOUR_API_KEY_HE
 client = Together()
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--eval_model', default='gemma-2-9b')
+parser.add_argument('--eval_model', default='gemma')
 args, _ = parser.parse_known_args()
 
 
@@ -33,7 +33,7 @@ def gen_answer(s, p):
     return architecture
 
 system_prompt = 'You are a helpful assistant.'
-file_list = sorted(set(os.listdir('pred')) - set(os.listdir('eval2')))
+file_list = sorted(set(os.listdir('pred')) - set(os.listdir('eval')))
 file_list = [f for f in file_list if args.eval_model in f]
 print('List of eval files:')
 print(file_list)

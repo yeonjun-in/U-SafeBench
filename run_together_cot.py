@@ -39,7 +39,7 @@ def gen_answer(s, p):
     return architecture
 
 data = json.load(open(os.path.join('data', args.dataset)))    
-cot = json.load(open(os.path.join('cot_list_v2', args.llm.split('/')[-1]+'.json')))
+cot = json.load(open(os.path.join('cot_list', args.llm.split('/')[-1]+'.json')))
 
 system_prompt = "You are a helpful assistant."
 
@@ -63,5 +63,5 @@ for i, instance in enumerate(tqdm(data)):
     # # if i==10:
     #     break
 
-with open(f'pred/{args.dataset.replace(".json", "")}_{args.llm.split("/")[-1]}_cot2.json', 'w') as f:
+with open(f'pred/{args.dataset.replace(".json", "")}_{args.llm.split("/")[-1]}_cot.json', 'w') as f:
     json.dump(results, f, indent=4)
