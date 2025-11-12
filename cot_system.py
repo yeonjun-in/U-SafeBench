@@ -64,5 +64,5 @@ for p in tqdm(all_profiles):
 
     collection[p] = answer
 
-with open(f'cot_list_v2/{args.llm.split("/")[-1]}.json', 'w') as f:
+with open(f'cot_list/{args.llm.split("/")[-1]}.json', 'w') as f:
     json.dump(collection, f, indent=4)
